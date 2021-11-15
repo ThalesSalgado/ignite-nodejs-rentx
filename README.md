@@ -74,7 +74,12 @@ yarn add csv-parse
 yarn add swagger-ui-express
 yarn add @types/swagger-ui-express -D
 
- - Docker: subindo app em container
- docker build -t rentx .
- docker run -p 3333:3333 rentx
- docker exec -it {nomeDoContainer} /bin/bash
+- Docker: subindo app em container
+docker build -t rentx .
+docker run -p 3333:3333 rentx
+docker exec -it {nomeDoContainer} /bin/bash
+
+docker-compose up -d
+docker-compose down
+
+docker logs {nomeDoContainer} -f
