@@ -77,9 +77,18 @@ yarn add @types/swagger-ui-express -D
 - Docker: subindo app em container
 docker build -t rentx .
 docker run -p 3333:3333 rentx
-docker exec -it {nomeDoContainer} /bin/bash
+
+docker ps
+docker ps -a
+docker images
+docker rm {idContainer || nomeContainer}
+docker stop {idContainer || nomeContainer}
+docker start {idContainer || nomeContainer}
+docker exec -it {idContainer || nomeContainer} /bin/bash
+docker logs {idContainer || nomeContainer} -f
 
 docker-compose up -d
 docker-compose down
+docker-compose stop
+docker-compose start
 
-docker logs {nomeDoContainer} -f
