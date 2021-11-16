@@ -92,3 +92,17 @@ docker-compose down
 docker-compose stop
 docker-compose start
 
+docker exec {nomeContainer} cat /etc/hosts
+
+- TypeORM: 
+  - site: typeorm.io
+
+  yarn add typeorm reflect-metadata
+  yarn add pg
+    npm install mysql --save
+    npm install oracledb --save
+
+  - Alterar tsconfig.json: (passar para true, descomentar, as linhas abaixo)
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
