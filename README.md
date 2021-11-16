@@ -8,21 +8,37 @@ yarn tsc --init
   node dist/server.js
 
 ```
+Fazer para o VSCode formatar o código sempre que salvarmos algum arquivo é adicionar uma opção chamada codeActionsOnSave nas configurações:
+
 "editor.codeActionsOnSave": {
   "source.fixAll.eslint": true
 }
 
-yarn add eslint -D
-yarn eslint --init
-yarn add @typescript-eslint/eslint-plugin@latest eslint-config-airbnb-base@latest eslint-plugin-import@^2.22.1 @typescript-eslint/parser@latest
-yarn add -D eslint-plugin-import-helpers eslint-import-resolver-typescript
+Eslint
+
+  yarn add eslint -D
+  yarn eslint --init
+    - Após inicializar o eslint, algumas perguntas serão feitas para configurar: (as respostas podem variar de acordo com necessidade)
+      - 1) How would you like do use Eslint? R: To check syntax, find problems and enforce code style
+      - 2) What type of modules does your project use? R: Javascript modules (import/export)
+      - 3) Which framework does your project use? R: None of these
+      - 4) Does your project use TypeScript? R: Yes
+      - 5) Where does your code run? R: Node
+      - 6) How would you like to define a style for your project? R: Use a popular style guide
+      - 7) Which style guide do you want to follow? R: Airbnb
+      - 8) What format do you want your config file to be in? R: JSON
+      - 9) Would you like to install them now with npm? R: No (porque estamos usando yarn nesse projeto)
+        Rode o comando abaixo para instalar os pacotes do passo 9:
+        yarn add @typescript-eslint/eslint-plugin@latest eslint-config-airbnb-base@latest eslint-plugin-import@^2.22.1 @typescript-eslint/parser@latest
+  
+  yarn add -D eslint-plugin-import-helpers eslint-import-resolver-typescript
 
 - criar na raiz do projeto um arquivo .eslintignore, com conteudo abaixo:
 /*.js
 node_modules
 dist
 
-- começar a configuração do arquivo que foi gerado o .eslintrc.json:
+- começar a configuração do arquivo que foi gerado na inicilização do ESLint, o .eslintrc.json:
   - adicionar dentro de "env" a linha:
      "jest": true
   - ainda dentro de "env", verifique se a primeira linha está como "es2020": true
@@ -41,6 +57,8 @@ dist
 ```
 
 ```
+Prettier
+
 yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
 
 - Com a instalação feita vamos modificar o arquivo .eslintrc.json adicionando no "extends" as seguintes regras:
