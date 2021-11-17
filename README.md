@@ -118,3 +118,6 @@ docker exec {nomeContainer} cat /etc/hosts
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
 
+  yarn typeorm migration:create -n CreateCategories
+  yarn typeorm migration:run
+  yarn typeorm migration:revert
