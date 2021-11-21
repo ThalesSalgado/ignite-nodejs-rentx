@@ -5,7 +5,6 @@ import multer from "multer";
 import { CreateCategoryController } from "../modules/cars/useCases/createCategory/CreateCategoryController";
 import { ImportCategoryController } from "../modules/cars/useCases/importCategory/ImportCategoryController";
 import { ListCategoriesController } from "../modules/cars/useCases/listCategories/ListCategoriesController";
-import { ListCategoriesUseCase } from "../modules/cars/useCases/listCategories/ListCategoriesUseCase";
 
 const categoriesRoutes = Router();
 
