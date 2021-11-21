@@ -2,7 +2,7 @@ import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
 export class CreateSpecifications1637461840225 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
-    queryRunner.createTable(
+    await queryRunner.createTable(
       new Table({
         name: "specifications",
         columns: [
@@ -20,7 +20,7 @@ export class CreateSpecifications1637461840225 implements MigrationInterface {
             type: "varchar",
           },
           {
-            name: "id",
+            name: "created_at",
             type: "timestamp",
             default: "now()",
           },
