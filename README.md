@@ -121,3 +121,13 @@ docker exec {nomeContainer} cat /etc/hosts
   yarn typeorm migration:create -n CreateCategories
   yarn typeorm migration:run
   yarn typeorm migration:revert
+
+- TSyringe:
+  yarn add tsyringe
+
+  - Alterar tsconfig.json: (ja deve ter sido feito ao configurar typeorm) (passar para true, descomentar, as linhas abaixo)
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+  
+  - Import Reflect polyfill: (ja deve ter sido feito esse passo)
+    import "reflect-metadata";
