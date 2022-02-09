@@ -131,3 +131,7 @@ docker exec {nomeContainer} cat /etc/hosts
   
   - Import Reflect polyfill: (ja deve ter sido feito esse passo)
     import "reflect-metadata";
+
+- BCrypt
+  yarn add bcrypt
+  yarn add @types/bcrypt -D
