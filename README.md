@@ -135,3 +135,7 @@ docker exec {nomeContainer} cat /etc/hosts
 - BCrypt
   yarn add bcrypt
   yarn add @types/bcrypt -D
+
+- JWT
+  yarn add jsonwebtoken
+  yarn add @types/jsonwebtoken -D
