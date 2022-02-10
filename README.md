@@ -139,3 +139,6 @@ docker exec {nomeContainer} cat /etc/hosts
 - JWT
   yarn add jsonwebtoken
   yarn add @types/jsonwebtoken -D
+
+- Express Async Error - Tratando Excecoes
+  yarn add express-async-errors
