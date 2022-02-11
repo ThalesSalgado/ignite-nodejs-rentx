@@ -171,3 +171,38 @@ docker exec {nomeContainer} cat /etc/hosts
       testMatch: ["**/*.spec.ts"],
     - Descomentar e definir o valor de "bail": 
       bail: true,
+
+
+
+
+
+
+
+
+
+
+
+
+
+- BOs
+  - "Error: ENOSPC: System limit for number of file watchers reached, watch '/tmp/.ts-nodeJeJ5LD/compiled/6885372817756528.req':"
+    - Descricao do problema: Listen uses inotify by default on Linux to monitor directories for changes. It's not uncommon to encounter a system limit on the number of files you can monitor. For example, Ubuntu Lucid's (64bit) inotify limit is set to 8192.
+  Solucoes:
+    - 1 opcao:
+      - You can get your current inotify file watch limit by executing: ```cat /proc/sys/fs/inotify/max_user_watches```
+      - You can set a new limit temporary with:
+        ```sudo sysctl fs.inotify.max_user_watches=524288```
+        ```sudo sysctl -p ```
+      - If you like to make your limit permanent, use:
+        ```echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf```
+        ```sudo sysctl -p ```
+    - 2 opcao?
+      - Exclude specific workspace directories from the VS Code file watcher with the files.watcherExclude setting. The default for files.watcherExclude excludes node_modules and some folders under .git, but you can add other directories that you don't want VS Code to track.
+      ```
+        "files.watcherExclude": {
+          "**/.git/objects/**": true,
+          "**/.git/subtree-cache/**": true,
+          "**/node_modules/*/**": true
+        }
+      ```
+    
