@@ -142,3 +142,32 @@ docker exec {nomeContainer} cat /etc/hosts
 
 - Express Async Error - Tratando Excecoes
   yarn add express-async-errors
+
+- Jest - Testes
+  yarn add jest @types/jest -D
+    yarn add jest -D
+    yarn add @types/jest -D
+  - Config
+  yarn jest --init
+    - ? Would you like to use Jest when running "test" script in "package.json" ?
+      yes
+    - ? Would you like to use Typescript for the config file ?
+      yes
+    - Choose the test enviromnet that will be used for testing
+      node
+    - ? Do you want Jest to add coverage reports ?
+      no !!
+    - ? Which provider should be used to instrument code for coverage ?
+      v8
+    - Automatically clear mock calls and instances between every test ?
+      yes
+  
+  yarn add ts-jest -D
+
+  - Modificar jest.config.ts:
+    - Descomentar e definir o valor de "preset": 
+      preset: "ts-jest",
+    - Descomentar e definir o valor de "testMatch": 
+      testMatch: ["**/*.spec.ts"],
+    - Descomentar e definir o valor de "bail": 
+      bail: true,
