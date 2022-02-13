@@ -172,6 +172,21 @@ docker exec {nomeContainer} cat /etc/hosts
     - Descomentar e definir o valor de "bail": 
       bail: true,
 
+- Dependências refatoração - Remapeando dependencias - Lib tsconfig-paths
+  yarn add tsconfig-paths -D
+  - Configurando tsconfig-paths para iniciar a app com tsconfig:
+    - Modificar "scripts" no arquivo "package.json":
+    - No arquivo "jest.config.ts", ajustar para os testes reconhecerem as importações:
+      - Importar no começo do arquivo:
+        import { pathsToModuleNameMapper } from "ts-jest/utils";
+        import { compilerOptions } from "./tsconfig.json";
+      - Mudar propriedade "moduleNameMapper" da para seguinte forma:
+        moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
+          prefix: "<rootDir>/src/",
+        }),
+      
+        
+
 
 
 
