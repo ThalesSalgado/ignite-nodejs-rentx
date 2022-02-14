@@ -2,12 +2,12 @@ import express, { Request, Response, NextFunction } from "express";
 import "express-async-errors";
 import swaggerUi from "swagger-ui-express";
 
-import "./database";
+import "@shared/infra/typeorm";
 import "@shared/container";
-import { AppError } from "@errors/AppError";
+import { AppError } from "@shared/errors/AppError";
 
+import swaggerFile from "../../../swagger.json"; // Check tsconfig.json file has "resolveJsonModule": true
 import { router } from "./routes";
-import swaggerFile from "./swagger.json"; // Check tsconfig.json file has "resolveJsonModule": true
 
 const app = express();
 
