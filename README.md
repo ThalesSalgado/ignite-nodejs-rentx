@@ -10,7 +10,6 @@ Curso Ignite NodeJS - Rocketseat
     yarn tsc
     node dist/server.js
 
-
   - Fazer para o VSCode formatar o código sempre que salvarmos algum arquivo é adicionar uma opção chamada codeActionsOnSave nas configurações:
 ```
     "editor.codeActionsOnSave": {
@@ -73,9 +72,8 @@ Curso Ignite NodeJS - Rocketseat
     - E nas "rules" vamos adicionar uma linha indicado para o ESLint mostrar todos os erros onde as regras do Prettier não estiverem sendo seguidas:
       "prettier/prettier": "error"
 
-  - Comandos gerais 
+  - Comandos gerais
     yarn add ts-node-dev -D
-    
     yarn add uuid
     yarn add @types/uuid -D
 
@@ -109,10 +107,10 @@ Curso Ignite NodeJS - Rocketseat
 
   - TypeORM: 
     - Site: typeorm.io
-    yarn add typeorm reflect-metadata
-    yarn add pg
-    npm install mysql --save
-    npm install oracledb --save
+      yarn add typeorm reflect-metadata
+      yarn add pg
+      npm install mysql --save
+      npm install oracledb --save
 
     - Alterar tsconfig.json: (passar para true, descomentar, as linhas abaixo)
       "experimentalDecorators": true,
