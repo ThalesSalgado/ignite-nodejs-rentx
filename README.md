@@ -216,4 +216,23 @@ Curso Ignite NodeJS - Rocketseat
           "**/node_modules/*/**": true
         }
       ```
-    
+  
+  - Request da lib do Express não possui atributo "user":
+    1) Criar uma pasta "@types" dentro de "src"
+    2) Criar uma pasta "express" dentro de "@types"
+    3) Criar arquivo "index.d.ts"
+        - Conteúdo do arquivo: 
+        declare namespace Express {
+          // eslint-disable-next-line @typescript-eslint/naming-convention
+          export interface Request {
+            user: {
+              id: string;
+            };
+          }
+        }
+    4) Alterar no arquivo "tsconfig.json", adicionar dentro de "compilerOptions":
+        "typeRoots": [
+          "./src/@types",
+          "./node_modules/@types"
+        ]
+    Link: https://app.rocketseat.com.br/h/forum/node-js/5f0a4065-acaf-4de0-963f-28d5306ced16

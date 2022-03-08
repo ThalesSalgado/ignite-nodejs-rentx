@@ -1,13 +1,11 @@
-import { createConnection, getConnectionOptions } from "typeorm";
+import { Connection, createConnection, getConnectionOptions } from "typeorm";
 
-interface IOptions {
-  host: string;
-}
+export default async (host = "database_ignite"): Promise<Connection> => {
+  const defaultOptions = await getConnectionOptions();
 
-getConnectionOptions().then((options) => {
-  const newOptions = options as IOptions;
-  newOptions.host = "database_ignite"; // Deve ser o mesmo nome dado no service do banco no docker-compose
-  createConnection({
-    ...options,
-  });
-});
+  return createConnection(
+    Object.assign(defaultOptions, {
+      host,
+    })
+  );
+};
