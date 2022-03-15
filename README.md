@@ -180,6 +180,9 @@ Curso Ignite NodeJS - Rocketseat
           moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
             prefix: "<rootDir>/src/",
           }),
+
+  - DayJs - Datas
+    yarn add dayjs
       
         
 
