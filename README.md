@@ -167,6 +167,8 @@ Curso Ignite NodeJS - Rocketseat
           testMatch: ["**/*.spec.ts"],
         - Descomentar e definir o valor de "bail": 
           bail: true,
+    
+    yarn test --runInBand (faz com que testes sejam executados sequencialmente, por padrao o Jest roda simultaneamente)
 
   - Dependências refatoração - Remapeando dependencias - Lib tsconfig-paths
     yarn add tsconfig-paths -D
@@ -183,6 +185,17 @@ Curso Ignite NodeJS - Rocketseat
 
   - DayJs - Datas
     yarn add dayjs
+
+  - Supertes - Testes de Integração
+    yarn add supertest 
+    yarn add @types/supertest -D
+    - Ajustes de configuração:
+      1) Arquivo app.ts e server.ts 
+        (separar a varial app do express e a inicializacao do server em outro arquivo para poder acessar a app no teste)
+      2) Arquivo package.json ajustar script de test:
+        "test": "NODE_ENV=test jest",
+      3) Arquivo index.ts no ./typeorm:
+        (mudar metodo createConnection para usar banco de teste integrado caso tenha variavel de ambiente test)
       
         
 

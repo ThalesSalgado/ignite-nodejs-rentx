@@ -27,6 +27,20 @@ services:
     depends_on:
       - database_ignite
     # network_mode: host
+  
+  # rentx_test:
+  #   image: postgres
+  #   container_name: rentx_test_db
+  #   restart: always
+  #   ports:
+  #    - 5433:5432
+  #   environment:
+  #     - POSTGRES_USER=docker
+  #     - POSTGRES_PASSWORD=ignite
+  #     - POSTGRES_DB=rentx
+  #   volumes:
+  #     - pgdata:/data/postgres
+    # network_mode: host
 
 volumes:
   pgdata: 
