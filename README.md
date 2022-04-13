@@ -253,4 +253,11 @@ Curso Ignite NodeJS - Rocketseat
         ]
     Link: https://app.rocketseat.com.br/h/forum/node-js/5f0a4065-acaf-4de0-963f-28d5306ced16
 
-  
+  - Rodando no mac
+    - Erro: bcrypt_lib.node: invalid ELF header
+      1) If you are running inside a docker container as I am, all you need is a .dockerignore with 'node_modules' specified in it.
+      2) My issue was with my docker-compose.yml file, I already had node_modules in my .dockerignore but I also needed to add the node_modules directory as a volume:
+        - volumes:
+          - ./:/usr/src/app
+          - /usr/src/app/node_modules
+        - https://stackoverflow.com/questions/15809611/bcrypt-invalid-elf-header-when-running-node-app
