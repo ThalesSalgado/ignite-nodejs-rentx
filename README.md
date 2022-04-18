@@ -3,11 +3,12 @@ Curso Ignite NodeJS - Rocketseat
 - Comandos e libs usadas durante curso:
   - Comandos (iniciando projeto):  
     yarn init -y
+    yarn add nodemon -D
     yarn add express
     yarn add @types/express -D
     yarn add typescript -D
-    yarn tsc --init
-    yarn tsc
+    yarn tsc --init // cria o tsconfig.json
+    yarn tsc // transforma arquivos ts para js
     node dist/server.js
 
   - Fazer para o VSCode formatar o código sempre que salvarmos algum arquivo é adicionar uma opção chamada codeActionsOnSave nas configurações:
@@ -72,8 +73,17 @@ Curso Ignite NodeJS - Rocketseat
     - E nas "rules" vamos adicionar uma linha indicado para o ESLint mostrar todos os erros onde as regras do Prettier não estiverem sendo seguidas:
       "prettier/prettier": "error"
 
-  - Comandos gerais
+  - TsNodeDev: converte typescript em node e executa automaticamente
     yarn add ts-node-dev -D
+    - Alterar no package.json, propriedade 'scripts':
+      "scripts": {
+        "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts"
+      }
+
+    - No arquivo tsconfig.json, comentar propriedade 'strict':
+      // "strict": true
+
+  - UUID: lib para geracao de uuids
     yarn add uuid
     yarn add @types/uuid -D
 
@@ -191,7 +201,7 @@ Curso Ignite NodeJS - Rocketseat
     yarn add @types/supertest -D
     - Ajustes de configuração:
       1) Arquivo app.ts e server.ts 
-        (separar a varial app do express e a inicializacao do server em outro arquivo para poder acessar a app no teste)
+        (separar a variavel app do express e a inicializacao do server em outro arquivo para poder acessar a app no teste)
       2) Arquivo package.json ajustar script de test:
         "test": "NODE_ENV=test jest",
       3) Arquivo index.ts no ./typeorm:
